@@ -45,6 +45,8 @@ VALUES
 ```sql
 SELECT * FROM CUSTOMER;
 ```
+<img width="618" height="361" alt="image" src="https://github.com/user-attachments/assets/1e1b819e-f67a-4bd1-be5c-8284a3a63505" />
+
 
 ---
 
@@ -56,6 +58,7 @@ FROM CUSTOMER c
 INNER JOIN AGENT a
 ON c.agent_code = a.agent_code;
 ```
+<img width="745" height="398" alt="image" src="https://github.com/user-attachments/assets/cf12167a-d1ef-4501-81ba-6fdb44840fd3" />
 
 ---
 
@@ -68,9 +71,10 @@ LEFT JOIN CUSTOMER c
 ON a.agent_code = c.agent_code;
 ```
 
+<img width="866" height="396" alt="image" src="https://github.com/user-attachments/assets/00ecab4d-27d6-4a0c-ab66-a17ea932cc07" />
+
 ---
 
-## 6. Output
 
 
 
