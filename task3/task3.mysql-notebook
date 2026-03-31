@@ -1,0 +1,1208 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nCREATE DATABASE MODULE;\nUSE MODULE;\nCREATE TABLE AGENT (\n    agent_code  CHAR(4) not NULL PRIMARY KEY,\n    agent_name  varchar(20),\n    working_area  varchar(20),\n    commission decimal(6,2),\n    phone_no    VARCHAR(10),\n    country  varchar(20)\n);\ninsert into agent(agent_code,agent_name,working_area,commission,phone_no,country)\nvalues \n('AX01','Jack','Pentagon',6750.34,'9767989898','USA'), \n('AX04','Ani','Thaad',4563,'9767989898','India'),\n('CD4J','Sam','Dome',3464.00,'9767989898','UK'),\n('23RF','John','Arena',5000.00,'9876543210','Canada'),\n('W9IO','Mike','Tower',null,'9123456789','Australia');\ninsert into agent(agent_code,agent_name,working_area,commission,phone_no,country)\nvalues \n('US01','David','New York',7000.00,'9000000001','USA'),\n('US02','Chris','Los Angeles',6500.50,'9000000002','USA'),\n('IN01','Ravi','Mumbai',4800.75,'9000000003','India'),\n('IN02','Priya','Delhi',5100.00,'9000000004','India'),\n('IN03','Arjun','Bangalore',5300.25,'9000000005','India'),\n('UK01','Harry','London',6000.00,'9000000006','UK'),\n('UK02','Olivia','Manchester',5800.50,'9000000007','UK'),\n('CA01','Liam','Toronto',6200.00,'9000000008','Canada'),\n('CA02','Noah','Vancouver',6100.75,'9000000009','Canada'),\n('AU01','Ethan','Sydney',5900.00,'9000000010','Australia'),\n('AU02','Lucas','Melbourne',6050.00,'9000000011','Australia'),\n('US03','Emma','New York',7200.00,'9000000012','USA'),\n('US04','Sophia','New York',7100.50,'9000000013','USA'),\n('IN04','Karan','Mumbai',4900.00,'9000000014','India'),\n('IN05','Neha','Mumbai',5000.25,'9000000015','India'),\n('UK03','George','London',6100.00,'9000000016','UK'),\n('UK04','Amelia','London',6200.75,'9000000017','UK');\nselect * from agent;\n#aggregate functions\n#number of agents from india\nselect country , count(*) as Num_Ind_agents from agent where country='India';\n#average commission of usa agents\nselect country, AVG(commission) as avg_commission from agent where country='USA';\n#group by \n#number of agents per country\nselect country, count(*) as Num_agents from agent group by country ORDER BY Num_agents;\n#average commission of agents per country \nselect country, AVG(commission) as avg_commission from agent group by country;\n#having\nselect country, count(*) as Num_agents from agent group by country  having Num_agents>3;\n\nselect country, count(*) as Num_agents from agent group by country  having Num_agents>3 order by Num_agents;\n\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 54,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 54,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 47,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 147
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "c9a5108b-c3a4-4172-aecf-3e3c44aef075",
+                            "content": "OK, 1 row affected in 14.396ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 23
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "98122526-34b8-4dad-b1ce-1593f6e6b0bf",
+                            "content": "OK, 0 records retrieved in 4.332ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "2f837b37-3688-4dbc-9810-93a06447aa43",
+                            "content": "OK, 0 records retrieved in 78.986ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 212
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "8879bf2b-89da-4101-f5b8-b20d3e30c075",
+                            "content": "OK, 5 rows affected in 36.819ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 354
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 354,
+                            "length": 0
+                        },
+                        "contentStart": 353,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 37,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "00ddd28f-758b-4f3e-8dc1-1f7e44789a3c",
+                            "content": "OK, 17 rows affected in 28.918ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 1054
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 1054,
+                            "length": 0
+                        },
+                        "contentStart": 1053,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 38,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "adcbbc1e-054a-4888-bf3f-dab67ca1de78"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "81cf6254-899c-4636-878b-45726b8b0cb0",
+                    "resultId": "adcbbc1e-054a-4888-bf3f-dab67ca1de78",
+                    "rows": [
+                        {
+                            "0": "23RF",
+                            "1": "John",
+                            "2": "Arena",
+                            "3": "5000.00",
+                            "4": "9876543210",
+                            "5": "Canada"
+                        },
+                        {
+                            "0": "AU01",
+                            "1": "Ethan",
+                            "2": "Sydney",
+                            "3": "5900.00",
+                            "4": "9000000010",
+                            "5": "Australia"
+                        },
+                        {
+                            "0": "AU02",
+                            "1": "Lucas",
+                            "2": "Melbourne",
+                            "3": "6050.00",
+                            "4": "9000000011",
+                            "5": "Australia"
+                        },
+                        {
+                            "0": "AX01",
+                            "1": "Jack",
+                            "2": "Pentagon",
+                            "3": "6750.34",
+                            "4": "9767989898",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "AX04",
+                            "1": "Ani",
+                            "2": "Thaad",
+                            "3": "4563.00",
+                            "4": "9767989898",
+                            "5": "India"
+                        },
+                        {
+                            "0": "CA01",
+                            "1": "Liam",
+                            "2": "Toronto",
+                            "3": "6200.00",
+                            "4": "9000000008",
+                            "5": "Canada"
+                        },
+                        {
+                            "0": "CA02",
+                            "1": "Noah",
+                            "2": "Vancouver",
+                            "3": "6100.75",
+                            "4": "9000000009",
+                            "5": "Canada"
+                        },
+                        {
+                            "0": "CD4J",
+                            "1": "Sam",
+                            "2": "Dome",
+                            "3": "3464.00",
+                            "4": "9767989898",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "IN01",
+                            "1": "Ravi",
+                            "2": "Mumbai",
+                            "3": "4800.75",
+                            "4": "9000000003",
+                            "5": "India"
+                        },
+                        {
+                            "0": "IN02",
+                            "1": "Priya",
+                            "2": "Delhi",
+                            "3": "5100.00",
+                            "4": "9000000004",
+                            "5": "India"
+                        },
+                        {
+                            "0": "IN03",
+                            "1": "Arjun",
+                            "2": "Bangalore",
+                            "3": "5300.25",
+                            "4": "9000000005",
+                            "5": "India"
+                        },
+                        {
+                            "0": "IN04",
+                            "1": "Karan",
+                            "2": "Mumbai",
+                            "3": "4900.00",
+                            "4": "9000000014",
+                            "5": "India"
+                        },
+                        {
+                            "0": "IN05",
+                            "1": "Neha",
+                            "2": "Mumbai",
+                            "3": "5000.25",
+                            "4": "9000000015",
+                            "5": "India"
+                        },
+                        {
+                            "0": "UK01",
+                            "1": "Harry",
+                            "2": "London",
+                            "3": "6000.00",
+                            "4": "9000000006",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "UK02",
+                            "1": "Olivia",
+                            "2": "Manchester",
+                            "3": "5800.50",
+                            "4": "9000000007",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "UK03",
+                            "1": "George",
+                            "2": "London",
+                            "3": "6100.00",
+                            "4": "9000000016",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "UK04",
+                            "1": "Amelia",
+                            "2": "London",
+                            "3": "6200.75",
+                            "4": "9000000017",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "US01",
+                            "1": "David",
+                            "2": "New York",
+                            "3": "7000.00",
+                            "4": "9000000001",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "US02",
+                            "1": "Chris",
+                            "2": "Los Angeles",
+                            "3": "6500.50",
+                            "4": "9000000002",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "US03",
+                            "1": "Emma",
+                            "2": "New York",
+                            "3": "7200.00",
+                            "4": "9000000012",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "US04",
+                            "1": "Sophia",
+                            "2": "New York",
+                            "3": "7100.50",
+                            "4": "9000000013",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "W9IO",
+                            "1": "Mike",
+                            "2": "Tower",
+                            "3": null,
+                            "4": "9123456789",
+                            "5": "Australia"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agent_code",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agent_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "working_area",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "commission",
+                            "field": "3",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "phone_no",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "country",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 22 records retrieved in 0.447ms"
+                    },
+                    "totalRowCount": 22,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from agent",
+                    "updatable": true,
+                    "fullTableName": "agent"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 39,
+                "end": 41,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2381f77c-3491-403e-c7dd-c5a342224c1f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 127
+                        },
+                        "contentStart": 50,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "81cf6254-899c-4636-878b-45726b8b0cb0",
+                    "resultId": "2381f77c-3491-403e-c7dd-c5a342224c1f",
+                    "rows": [
+                        {
+                            "0": "India",
+                            "1": 6
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "country",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Num_Ind_agents",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.756ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#aggregate functions\nselect country , count(*) as Num_Ind_agents from agent where country='India'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 42,
+                "end": 43,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "222e0e6f-0b89-4969-9e4f-a290d86794ff"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 115
+                        },
+                        "contentStart": 34,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "81cf6254-899c-4636-878b-45726b8b0cb0",
+                    "resultId": "222e0e6f-0b89-4969-9e4f-a290d86794ff",
+                    "rows": [
+                        {
+                            "0": "USA",
+                            "1": "6910.268000"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "country",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "avg_commission",
+                            "field": "1",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.561ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#average commission of usa agents\nselect country, AVG(commission) as avg_commission from agent where country='USA'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 44,
+                "end": 46,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "307e4ffb-3c1f-443e-a441-86f28c99ff2d"
+                    ]
+                },
+                "currentHeight": 174,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 128
+                        },
+                        "contentStart": 41,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "81cf6254-899c-4636-878b-45726b8b0cb0",
+                    "resultId": "307e4ffb-3c1f-443e-a441-86f28c99ff2d",
+                    "rows": [
+                        {
+                            "0": "Canada",
+                            "1": 3
+                        },
+                        {
+                            "0": "Australia",
+                            "1": 3
+                        },
+                        {
+                            "0": "USA",
+                            "1": 5
+                        },
+                        {
+                            "0": "UK",
+                            "1": 5
+                        },
+                        {
+                            "0": "India",
+                            "1": 6
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "country",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Num_agents",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 1.718ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#group by \n#number of agents per country\nselect country, count(*) as Num_agents from agent group by country ORDER BY Num_agents",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 47,
+                "end": 48,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ceb4791e-a73a-416a-a16a-878a51b04dc4"
+                    ]
+                },
+                "currentHeight": 174,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 121
+                        },
+                        "contentStart": 43,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "81cf6254-899c-4636-878b-45726b8b0cb0",
+                    "resultId": "ceb4791e-a73a-416a-a16a-878a51b04dc4",
+                    "rows": [
+                        {
+                            "0": "Canada",
+                            "1": "5766.916667"
+                        },
+                        {
+                            "0": "Australia",
+                            "1": "5975.000000"
+                        },
+                        {
+                            "0": "USA",
+                            "1": "6910.268000"
+                        },
+                        {
+                            "0": "India",
+                            "1": "4944.041667"
+                        },
+                        {
+                            "0": "UK",
+                            "1": "5513.050000"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "country",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "avg_commission",
+                            "field": "1",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 1.167ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#average commission of agents per country \nselect country, AVG(commission) as avg_commission from agent group by country",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 49,
+                "end": 51,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4f6ba5c3-c3e6-4bfb-eaed-7b12c6192943"
+                    ]
+                },
+                "currentHeight": 130,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 96
+                        },
+                        "contentStart": 8,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 96,
+                            "length": 1
+                        },
+                        "contentStart": 95,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "81cf6254-899c-4636-878b-45726b8b0cb0",
+                    "resultId": "4f6ba5c3-c3e6-4bfb-eaed-7b12c6192943",
+                    "rows": [
+                        {
+                            "0": "USA",
+                            "1": 5
+                        },
+                        {
+                            "0": "India",
+                            "1": 6
+                        },
+                        {
+                            "0": "UK",
+                            "1": 5
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "country",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Num_agents",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 4.512ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#having\nselect country, count(*) as Num_agents from agent group by country  having Num_agents>3",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 52,
+                "end": 53,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "146f14d6-3071-455b-8ea1-2b08f008a61c"
+                    ]
+                },
+                "currentHeight": 130,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 108
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 108,
+                            "length": 1
+                        },
+                        "contentStart": 107,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "81cf6254-899c-4636-878b-45726b8b0cb0",
+                    "resultId": "146f14d6-3071-455b-8ea1-2b08f008a61c",
+                    "rows": [
+                        {
+                            "0": "USA",
+                            "1": 5
+                        },
+                        {
+                            "0": "UK",
+                            "1": 5
+                        },
+                        {
+                            "0": "India",
+                            "1": 6
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "country",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Num_agents",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 1.036ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select country, count(*) as Num_agents from agent group by country  having Num_agents>3 order by Num_agents",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 54,
+                "end": 54,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

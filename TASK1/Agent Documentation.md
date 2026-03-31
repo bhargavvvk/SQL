@@ -50,7 +50,3 @@ SELECT * FROM AGENT;
 
 
 
-| agent_code | agent_name | working_area | commission | phone_no   | country   |
-|------------|------------|--------------|------------|------------|-----------|
-|            |            |              |            |            |           |
-|            |            |              |            |            |           |
