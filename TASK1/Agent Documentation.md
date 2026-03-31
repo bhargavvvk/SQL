@@ -49,4 +49,5 @@ SELECT * FROM AGENT;
 ## 5. Output
 
 
+<img width="930" height="377" alt="image" src="https://github.com/user-attachments/assets/c459b81a-f5e3-4bf4-a722-797168ea7934" />
 
