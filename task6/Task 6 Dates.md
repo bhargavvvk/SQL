@@ -51,6 +51,20 @@ SELECT DATE_FORMAT(event_date, '%W, %d-%M-%Y') FROM EVENTS;
 
 ---
 
+<img width="618" height="140" alt="image" src="https://github.com/user-attachments/assets/2291a749-e0ce-4332-aa73-989ffbde79f3" />
+<img width="548" height="246" alt="image" src="https://github.com/user-attachments/assets/261e05f1-f42c-4c31-afac-caf0020f6044" />
+<img width="575" height="177" alt="image" src="https://github.com/user-attachments/assets/4d3c1b5c-6ee0-46c5-a11d-17ad32bf1fb4" />
+<img width="640" height="95" alt="image" src="https://github.com/user-attachments/assets/b4cea031-1fc5-4054-9a19-d7a7bd54e23a" />
+<img width="470" height="107" alt="image" src="https://github.com/user-attachments/assets/7142d06c-31ad-4866-a098-7e3f425c1d7d" />
+<img width="527" height="169" alt="image" src="https://github.com/user-attachments/assets/e2a3afa4-a8c8-4c67-81fc-3a5e5a9b129f" />
+<img width="476" height="250" alt="image" src="https://github.com/user-attachments/assets/e2570ac8-4eab-4e96-8a5c-ec61e5896fdc" />
+<img width="436" height="251" alt="image" src="https://github.com/user-attachments/assets/5731ce0f-cfac-436e-ba05-cbc080bab0d6" />
+
+
+
+
+
+
 
 
 
