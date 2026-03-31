@@ -1,0 +1,724 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "use MODULE;\n#subqueries\n#find agents whose salary is above average\nselect agent_code , agent_name from agent where commission >= (select avg(commission) as avg_comm from agent);\nselect a1.agent_code, a1.agent_name, a1.country,a1.commission,a2.avg_comm  from agent a1 join  (select country, avg(commission) as avg_comm from agent group by country) as a2 on a1.country=a2.country where a1.commission>a2.avg_comm;\nselect agent_code, agent_name,commission,(select avg(commission) from agent) as avg_comm  from agent; \n",
+    "options": {},
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": true,
+                "selectionStart": {
+                    "lineNumber": 2,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 7,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 5,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -17
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "dc506f6e-d022-42f5-ef5d-835d6b45cee2",
+                            "content": "OK, 0 records retrieved in 3.879ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "63689ffa-7ce0-4274-fbec-ed7d97a5303d"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 165
+                        },
+                        "contentStart": 55,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "5e6d242e-198b-44d1-8d54-5423895e6d48",
+                    "resultId": "63689ffa-7ce0-4274-fbec-ed7d97a5303d",
+                    "rows": [
+                        {
+                            "0": "AU01",
+                            "1": "Ethan"
+                        },
+                        {
+                            "0": "AU02",
+                            "1": "Lucas"
+                        },
+                        {
+                            "0": "AX01",
+                            "1": "Jack"
+                        },
+                        {
+                            "0": "CA01",
+                            "1": "Liam"
+                        },
+                        {
+                            "0": "CA02",
+                            "1": "Noah"
+                        },
+                        {
+                            "0": "UK01",
+                            "1": "Harry"
+                        },
+                        {
+                            "0": "UK02",
+                            "1": "Olivia"
+                        },
+                        {
+                            "0": "UK03",
+                            "1": "George"
+                        },
+                        {
+                            "0": "UK04",
+                            "1": "Amelia"
+                        },
+                        {
+                            "0": "US01",
+                            "1": "David"
+                        },
+                        {
+                            "0": "US02",
+                            "1": "Chris"
+                        },
+                        {
+                            "0": "US03",
+                            "1": "Emma"
+                        },
+                        {
+                            "0": "US04",
+                            "1": "Sophia"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agent_code",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agent_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 13 records retrieved in 8.838ms"
+                    },
+                    "totalRowCount": 13,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#subqueries\n#find agents whose salary is above average\nselect agent_code , agent_name from agent where commission >= (select avg(commission) as avg_comm from agent)",
+                    "updatable": true,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1a9bae49-ed49-483e-a800-3a192c6e9ccd"
+                    ]
+                },
+                "currentHeight": 350,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 232
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "5e6d242e-198b-44d1-8d54-5423895e6d48",
+                    "resultId": "1a9bae49-ed49-483e-a800-3a192c6e9ccd",
+                    "rows": [
+                        {
+                            "0": "AU02",
+                            "1": "Lucas",
+                            "2": "Australia",
+                            "3": "6050.00",
+                            "4": "5975.000000"
+                        },
+                        {
+                            "0": "CA01",
+                            "1": "Liam",
+                            "2": "Canada",
+                            "3": "6200.00",
+                            "4": "5766.916667"
+                        },
+                        {
+                            "0": "CA02",
+                            "1": "Noah",
+                            "2": "Canada",
+                            "3": "6100.75",
+                            "4": "5766.916667"
+                        },
+                        {
+                            "0": "IN02",
+                            "1": "Priya",
+                            "2": "India",
+                            "3": "5100.00",
+                            "4": "4944.041667"
+                        },
+                        {
+                            "0": "IN03",
+                            "1": "Arjun",
+                            "2": "India",
+                            "3": "5300.25",
+                            "4": "4944.041667"
+                        },
+                        {
+                            "0": "IN05",
+                            "1": "Neha",
+                            "2": "India",
+                            "3": "5000.25",
+                            "4": "4944.041667"
+                        },
+                        {
+                            "0": "UK01",
+                            "1": "Harry",
+                            "2": "UK",
+                            "3": "6000.00",
+                            "4": "5513.050000"
+                        },
+                        {
+                            "0": "UK02",
+                            "1": "Olivia",
+                            "2": "UK",
+                            "3": "5800.50",
+                            "4": "5513.050000"
+                        },
+                        {
+                            "0": "UK03",
+                            "1": "George",
+                            "2": "UK",
+                            "3": "6100.00",
+                            "4": "5513.050000"
+                        },
+                        {
+                            "0": "UK04",
+                            "1": "Amelia",
+                            "2": "UK",
+                            "3": "6200.75",
+                            "4": "5513.050000"
+                        },
+                        {
+                            "0": "US01",
+                            "1": "David",
+                            "2": "USA",
+                            "3": "7000.00",
+                            "4": "6910.268000"
+                        },
+                        {
+                            "0": "US03",
+                            "1": "Emma",
+                            "2": "USA",
+                            "3": "7200.00",
+                            "4": "6910.268000"
+                        },
+                        {
+                            "0": "US04",
+                            "1": "Sophia",
+                            "2": "USA",
+                            "3": "7100.50",
+                            "4": "6910.268000"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agent_code",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agent_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "country",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "commission",
+                            "field": "3",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "avg_comm",
+                            "field": "4",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 13 records retrieved in 1.258ms"
+                    },
+                    "totalRowCount": 13,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select a1.agent_code, a1.agent_name, a1.country,a1.commission,a2.avg_comm  from agent a1 join  (select country, avg(commission) as avg_comm from agent group by country) as a2 on a1.country=a2.country where a1.commission>a2.avg_comm",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d6d665e2-8dd2-4620-e38e-100d7edd39db"
+                    ]
+                },
+                "currentHeight": 352,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 101
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 101,
+                            "length": 1
+                        },
+                        "contentStart": 100,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "5e6d242e-198b-44d1-8d54-5423895e6d48",
+                    "resultId": "d6d665e2-8dd2-4620-e38e-100d7edd39db",
+                    "rows": [
+                        {
+                            "0": "23RF",
+                            "1": "John",
+                            "2": "5000.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "AU01",
+                            "1": "Ethan",
+                            "2": "5900.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "AU02",
+                            "1": "Lucas",
+                            "2": "6050.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "AX01",
+                            "1": "Jack",
+                            "2": "6750.34",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "AX04",
+                            "1": "Ani",
+                            "2": "4563.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "CA01",
+                            "1": "Liam",
+                            "2": "6200.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "CA02",
+                            "1": "Noah",
+                            "2": "6100.75",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "CD4J",
+                            "1": "Sam",
+                            "2": "3464.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "IN01",
+                            "1": "Ravi",
+                            "2": "4800.75",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "IN02",
+                            "1": "Priya",
+                            "2": "5100.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "IN03",
+                            "1": "Arjun",
+                            "2": "5300.25",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "IN04",
+                            "1": "Karan",
+                            "2": "4900.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "IN05",
+                            "1": "Neha",
+                            "2": "5000.25",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "UK01",
+                            "1": "Harry",
+                            "2": "6000.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "UK02",
+                            "1": "Olivia",
+                            "2": "5800.50",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "UK03",
+                            "1": "George",
+                            "2": "6100.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "UK04",
+                            "1": "Amelia",
+                            "2": "6200.75",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "US01",
+                            "1": "David",
+                            "2": "7000.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "US02",
+                            "1": "Chris",
+                            "2": "6500.50",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "US03",
+                            "1": "Emma",
+                            "2": "7200.00",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "US04",
+                            "1": "Sophia",
+                            "2": "7100.50",
+                            "3": "5763.409048"
+                        },
+                        {
+                            "0": "W9IO",
+                            "1": "Mike",
+                            "2": null,
+                            "3": "5763.409048"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agent_code",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agent_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "commission",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "avg_comm",
+                            "field": "3",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 22 records retrieved in 17.354ms"
+                    },
+                    "totalRowCount": 22,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select agent_code, agent_name,commission,(select avg(commission) from agent) as avg_comm  from agent",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
