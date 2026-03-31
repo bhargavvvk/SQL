@@ -1,0 +1,973 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "use module;\nCREATE TABLE EVENTS (\n  event_id INT PRIMARY KEY,\n  event_name VARCHAR(20),\n  event_date DATE\n);\nINSERT into events (event_id, event_name, event_date)\nvalues\n(1, 'IPL Match', '2026-04-10'),\n(2, 'Music Festival', '2026-05-15'),\n(3, 'Art Exhibition', '2026-06-01'),\n(4, 'Tech Conference', '2026-04-20'),\n(5, 'Startup Meetup', '2026-04-05'),\n(6, 'Hackathon', '2026-04-02'),\n(7, 'Gaming Tournament', '2026-05-01');\nselect * from events where event_date > '2026-05-01';\n#curdate() or current_date()\nselect * from events where event_date > CURRENT_DATE();\nselect * from events where month(event_date)=month(current_date())+1;\nselect * from events where event_date BETWEEN '2026-01-01' and CURDATE();\nselect DATEDIFF(event_date,curdate()) from events where event_name='IPL Match';\nselect * from events where event_date BETWEEN  CURDATE() and DATE_ADD(curdate(),interval 5 day);\n\nselect DATE_FORMAT(event_date,'%m-%m-%y') from events;\nselect DATE_FORMAT(event_date,'%W, %d-%M-%Y') from events;\n\n",
+    "options": {},
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 27,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 27,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 22,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 85
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": true
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "f8a82cc2-ccfa-4ce1-bdc6-a1cb9e8f629c",
+                            "content": "OK, 0 records retrieved in 3.242ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "37eeed8e-2258-4798-cec2-8b77cda73d06",
+                            "content": "OK, 0 records retrieved in 50.23ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 96
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "33025b1e-576d-4e44-ea6f-f2db0b85f505",
+                            "content": "OK, 7 rows affected in 9.614ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 313
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "776c3518-5378-4528-e1af-c79663044e69"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 53
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "713a1106-bc12-45b6-9532-6b3fecf382cf",
+                    "resultId": "776c3518-5378-4528-e1af-c79663044e69",
+                    "rows": [
+                        {
+                            "0": 2,
+                            "1": "Music Festival",
+                            "2": "2026-05-15"
+                        },
+                        {
+                            "0": 3,
+                            "1": "Art Exhibition",
+                            "2": "2026-06-01"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "event_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "event_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "event_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.639ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from events where event_date > '2026-05-01'",
+                    "updatable": true,
+                    "fullTableName": "events"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5347ad1e-8160-4977-861d-8ff7997b36c6"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 84
+                        },
+                        "contentStart": 29,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "713a1106-bc12-45b6-9532-6b3fecf382cf",
+                    "resultId": "5347ad1e-8160-4977-861d-8ff7997b36c6",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "IPL Match",
+                            "2": "2026-04-10"
+                        },
+                        {
+                            "0": 2,
+                            "1": "Music Festival",
+                            "2": "2026-05-15"
+                        },
+                        {
+                            "0": 3,
+                            "1": "Art Exhibition",
+                            "2": "2026-06-01"
+                        },
+                        {
+                            "0": 4,
+                            "1": "Tech Conference",
+                            "2": "2026-04-20"
+                        },
+                        {
+                            "0": 5,
+                            "1": "Startup Meetup",
+                            "2": "2026-04-05"
+                        },
+                        {
+                            "0": 6,
+                            "1": "Hackathon",
+                            "2": "2026-04-02"
+                        },
+                        {
+                            "0": 7,
+                            "1": "Gaming Tournament",
+                            "2": "2026-05-01"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "event_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "event_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "event_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.544ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from events where event_date > CURRENT_DATE()",
+                    "updatable": true,
+                    "fullTableName": "events"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 19,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "92229929-68b1-4d42-f95b-2fd8fe012f82"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 69
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "713a1106-bc12-45b6-9532-6b3fecf382cf",
+                    "resultId": "92229929-68b1-4d42-f95b-2fd8fe012f82",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "IPL Match",
+                            "2": "2026-04-10"
+                        },
+                        {
+                            "0": 4,
+                            "1": "Tech Conference",
+                            "2": "2026-04-20"
+                        },
+                        {
+                            "0": 5,
+                            "1": "Startup Meetup",
+                            "2": "2026-04-05"
+                        },
+                        {
+                            "0": 6,
+                            "1": "Hackathon",
+                            "2": "2026-04-02"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "event_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "event_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "event_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 1.161ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from events where month(event_date)=month(current_date())+1",
+                    "updatable": true,
+                    "fullTableName": "events"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 20,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8aad893c-6f07-45e7-ae7e-210fe0889575"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 73
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "713a1106-bc12-45b6-9532-6b3fecf382cf",
+                    "resultId": "8aad893c-6f07-45e7-ae7e-210fe0889575",
+                    "rows": [],
+                    "columns": [
+                        {
+                            "title": "event_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "event_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 15,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "UNICODE",
+                                    "ASCII"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "One",
+                                "synonyms": [
+                                    "CHAR VARYING",
+                                    "CHARACTER VARYING",
+                                    "VARCHARACTER"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "event_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 0 records retrieved in 2.207ms"
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from events where event_date BETWEEN '2026-01-01' and CURDATE()",
+                    "updatable": true,
+                    "fullTableName": "events"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "939d6743-1515-400d-db25-f5ef229c4531"
+                    ]
+                },
+                "currentHeight": 86,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 79
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "713a1106-bc12-45b6-9532-6b3fecf382cf",
+                    "resultId": "939d6743-1515-400d-db25-f5ef229c4531",
+                    "rows": [
+                        {
+                            "0": 10
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DATEDIFF(event_date,curdate())",
+                            "field": "0",
+                            "dataType": {
+                                "type": 3,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 8,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INT3",
+                                    "MIDDLEINT"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 21.234ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select DATEDIFF(event_date,curdate()) from events where event_name='IPL Match'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "01412f2b-be8f-498e-f6f0-3c963701ca81"
+                    ]
+                },
+                "currentHeight": 108,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 96
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 96,
+                            "length": 1
+                        },
+                        "contentStart": 95,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "713a1106-bc12-45b6-9532-6b3fecf382cf",
+                    "resultId": "01412f2b-be8f-498e-f6f0-3c963701ca81",
+                    "rows": [
+                        {
+                            "0": 5,
+                            "1": "Startup Meetup",
+                            "2": "2026-04-05"
+                        },
+                        {
+                            "0": 6,
+                            "1": "Hackathon",
+                            "2": "2026-04-02"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "event_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "event_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "event_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 1.162ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from events where event_date BETWEEN  CURDATE() and DATE_ADD(curdate(),interval 5 day)",
+                    "updatable": true,
+                    "fullTableName": "events"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 24,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9236f274-c428-4832-9b78-73deeb9697b9"
+                    ]
+                },
+                "currentHeight": 218,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 54
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "713a1106-bc12-45b6-9532-6b3fecf382cf",
+                    "resultId": "9236f274-c428-4832-9b78-73deeb9697b9",
+                    "rows": [
+                        {
+                            "0": "04-04-26"
+                        },
+                        {
+                            "0": "05-05-26"
+                        },
+                        {
+                            "0": "06-06-26"
+                        },
+                        {
+                            "0": "04-04-26"
+                        },
+                        {
+                            "0": "04-04-26"
+                        },
+                        {
+                            "0": "04-04-26"
+                        },
+                        {
+                            "0": "05-05-26"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DATE_FORMAT(event_date,'%m-%m-%y')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 3.853ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select DATE_FORMAT(event_date,'%m-%m-%y') from events",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 25,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "63cbbc64-6bed-4ae1-d699-90214f493f50"
+                    ]
+                },
+                "currentHeight": 218,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 58
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 58,
+                            "length": 1
+                        },
+                        "contentStart": 57,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "713a1106-bc12-45b6-9532-6b3fecf382cf",
+                    "resultId": "63cbbc64-6bed-4ae1-d699-90214f493f50",
+                    "rows": [
+                        {
+                            "0": "Friday, 10-April-2026"
+                        },
+                        {
+                            "0": "Friday, 15-May-2026"
+                        },
+                        {
+                            "0": "Monday, 01-June-2026"
+                        },
+                        {
+                            "0": "Monday, 20-April-2026"
+                        },
+                        {
+                            "0": "Sunday, 05-April-2026"
+                        },
+                        {
+                            "0": "Thursday, 02-April-2026"
+                        },
+                        {
+                            "0": "Friday, 01-May-2026"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DATE_FORMAT(event_date,'%W, %d-%M-%Y')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.77ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select DATE_FORMAT(event_date,'%W, %d-%M-%Y') from events",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 27,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
