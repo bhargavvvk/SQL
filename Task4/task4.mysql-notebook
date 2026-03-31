@@ -1,0 +1,1127 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "use module;\nCREATE TABLE CUSTOMER (\n  cust_id INT PRIMARY KEY,\n  cust_name VARCHAR(50),\n  city VARCHAR(50),\n  agent_code VARCHAR(10),\n\n  CONSTRAINT fk_agent\n  FOREIGN KEY (agent_code)\n  REFERENCES AGENT(agent_code)\n);\n\nINSERT INTO CUSTOMER (cust_id, cust_name, city, agent_code)\nvalues\n(6,'Amit','Mumbai','IN01'),\n(7,'Pooja','Delhi','IN02'),\n(8,'Rohit','Bangalore','IN03'),\n(9,'Meera','Mumbai','IN04'),\n(10,'James','New York','US01'),\n(11,'Sophia','Los Angeles','US02'),\n(12,'Daniel','New York','US03'),\n(13,'Oliver','London','UK01'),\n(14,'Harry','Manchester','UK02'),\n(15,'Isla','London','UK03'),\n(16,'Noah','Toronto','CA01'),\n(17,'Emma','Vancouver','CA02'),\n(18,'Lucas','Sydney','AU01'),\n(19,'Mia','Melbourne','AU02');\nselect * from customer;\nselect * from agent;\n#inner join\nselect c.cust_name,a.agent_name,a.phone_no,c.city from customer c inner join agent a on c.agent_code=a.agent_code;\n#left join\nselect a.agent_code,a.agent_name,c.cust_id from agent a left join customer c on a.agent_code=c.agent_code;\n",
+    "options": {},
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 35,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 35,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 33,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 351
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "b3692ed8-6ea1-444f-f4be-a6c88aa08f07",
+                            "content": "OK, 0 records retrieved in 3.318ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "b420a9f1-d03f-4741-d7de-6c8ab65092f0",
+                            "content": "OK, 0 records retrieved in 72.813ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 205
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 205,
+                            "length": 1
+                        },
+                        "contentStart": 204,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 28,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 501
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 29,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "78b5674d-b4e4-4b92-e7b9-9698ebc5fc69"
+                    ]
+                },
+                "currentHeight": 352,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 23
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ee1746dd-e735-4b2d-c262-7fbe1202a7fb",
+                    "resultId": "78b5674d-b4e4-4b92-e7b9-9698ebc5fc69",
+                    "rows": [
+                        {
+                            "0": 6,
+                            "1": "Amit",
+                            "2": "Mumbai",
+                            "3": "IN01"
+                        },
+                        {
+                            "0": 7,
+                            "1": "Pooja",
+                            "2": "Delhi",
+                            "3": "IN02"
+                        },
+                        {
+                            "0": 8,
+                            "1": "Rohit",
+                            "2": "Bangalore",
+                            "3": "IN03"
+                        },
+                        {
+                            "0": 9,
+                            "1": "Meera",
+                            "2": "Mumbai",
+                            "3": "IN04"
+                        },
+                        {
+                            "0": 10,
+                            "1": "James",
+                            "2": "New York",
+                            "3": "US01"
+                        },
+                        {
+                            "0": 11,
+                            "1": "Sophia",
+                            "2": "Los Angeles",
+                            "3": "US02"
+                        },
+                        {
+                            "0": 12,
+                            "1": "Daniel",
+                            "2": "New York",
+                            "3": "US03"
+                        },
+                        {
+                            "0": 13,
+                            "1": "Oliver",
+                            "2": "London",
+                            "3": "UK01"
+                        },
+                        {
+                            "0": 14,
+                            "1": "Harry",
+                            "2": "Manchester",
+                            "3": "UK02"
+                        },
+                        {
+                            "0": 15,
+                            "1": "Isla",
+                            "2": "London",
+                            "3": "UK03"
+                        },
+                        {
+                            "0": 16,
+                            "1": "Noah",
+                            "2": "Toronto",
+                            "3": "CA01"
+                        },
+                        {
+                            "0": 17,
+                            "1": "Emma",
+                            "2": "Vancouver",
+                            "3": "CA02"
+                        },
+                        {
+                            "0": 18,
+                            "1": "Lucas",
+                            "2": "Sydney",
+                            "3": "AU01"
+                        },
+                        {
+                            "0": 19,
+                            "1": "Mia",
+                            "2": "Melbourne",
+                            "3": "AU02"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "cust_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "cust_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "city",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "agent_code",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 14 records retrieved in 0.45ms"
+                    },
+                    "totalRowCount": 14,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from customer",
+                    "updatable": true,
+                    "fullTableName": "customer"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 30,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "bc2ac99e-10f4-4930-a450-d4196ab94c2c"
+                    ]
+                },
+                "currentHeight": 352,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 20,
+                            "length": 0
+                        },
+                        "contentStart": 19,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ee1746dd-e735-4b2d-c262-7fbe1202a7fb",
+                    "resultId": "bc2ac99e-10f4-4930-a450-d4196ab94c2c",
+                    "rows": [
+                        {
+                            "0": "23RF",
+                            "1": "John",
+                            "2": "Arena",
+                            "3": "5000.00",
+                            "4": "9876543210",
+                            "5": "Canada"
+                        },
+                        {
+                            "0": "AU01",
+                            "1": "Ethan",
+                            "2": "Sydney",
+                            "3": "5900.00",
+                            "4": "9000000010",
+                            "5": "Australia"
+                        },
+                        {
+                            "0": "AU02",
+                            "1": "Lucas",
+                            "2": "Melbourne",
+                            "3": "6050.00",
+                            "4": "9000000011",
+                            "5": "Australia"
+                        },
+                        {
+                            "0": "AX01",
+                            "1": "Jack",
+                            "2": "Pentagon",
+                            "3": "6750.34",
+                            "4": "9767989898",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "AX04",
+                            "1": "Ani",
+                            "2": "Thaad",
+                            "3": "4563.00",
+                            "4": "9767989898",
+                            "5": "India"
+                        },
+                        {
+                            "0": "CA01",
+                            "1": "Liam",
+                            "2": "Toronto",
+                            "3": "6200.00",
+                            "4": "9000000008",
+                            "5": "Canada"
+                        },
+                        {
+                            "0": "CA02",
+                            "1": "Noah",
+                            "2": "Vancouver",
+                            "3": "6100.75",
+                            "4": "9000000009",
+                            "5": "Canada"
+                        },
+                        {
+                            "0": "CD4J",
+                            "1": "Sam",
+                            "2": "Dome",
+                            "3": "3464.00",
+                            "4": "9767989898",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "IN01",
+                            "1": "Ravi",
+                            "2": "Mumbai",
+                            "3": "4800.75",
+                            "4": "9000000003",
+                            "5": "India"
+                        },
+                        {
+                            "0": "IN02",
+                            "1": "Priya",
+                            "2": "Delhi",
+                            "3": "5100.00",
+                            "4": "9000000004",
+                            "5": "India"
+                        },
+                        {
+                            "0": "IN03",
+                            "1": "Arjun",
+                            "2": "Bangalore",
+                            "3": "5300.25",
+                            "4": "9000000005",
+                            "5": "India"
+                        },
+                        {
+                            "0": "IN04",
+                            "1": "Karan",
+                            "2": "Mumbai",
+                            "3": "4900.00",
+                            "4": "9000000014",
+                            "5": "India"
+                        },
+                        {
+                            "0": "IN05",
+                            "1": "Neha",
+                            "2": "Mumbai",
+                            "3": "5000.25",
+                            "4": "9000000015",
+                            "5": "India"
+                        },
+                        {
+                            "0": "UK01",
+                            "1": "Harry",
+                            "2": "London",
+                            "3": "6000.00",
+                            "4": "9000000006",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "UK02",
+                            "1": "Olivia",
+                            "2": "Manchester",
+                            "3": "5800.50",
+                            "4": "9000000007",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "UK03",
+                            "1": "George",
+                            "2": "London",
+                            "3": "6100.00",
+                            "4": "9000000016",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "UK04",
+                            "1": "Amelia",
+                            "2": "London",
+                            "3": "6200.75",
+                            "4": "9000000017",
+                            "5": "UK"
+                        },
+                        {
+                            "0": "US01",
+                            "1": "David",
+                            "2": "New York",
+                            "3": "7000.00",
+                            "4": "9000000001",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "US02",
+                            "1": "Chris",
+                            "2": "Los Angeles",
+                            "3": "6500.50",
+                            "4": "9000000002",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "US03",
+                            "1": "Emma",
+                            "2": "New York",
+                            "3": "7200.00",
+                            "4": "9000000012",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "US04",
+                            "1": "Sophia",
+                            "2": "New York",
+                            "3": "7100.50",
+                            "4": "9000000013",
+                            "5": "USA"
+                        },
+                        {
+                            "0": "W9IO",
+                            "1": "Mike",
+                            "2": "Tower",
+                            "3": null,
+                            "4": "9123456789",
+                            "5": "Australia"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agent_code",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agent_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "working_area",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "commission",
+                            "field": "3",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "phone_no",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "country",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 22 records retrieved in 0.532ms"
+                    },
+                    "totalRowCount": 22,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from agent",
+                    "updatable": true,
+                    "fullTableName": "agent"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "075534df-dae6-4c1d-da14-24b8dbaee2d3"
+                    ]
+                },
+                "currentHeight": 352,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 126
+                        },
+                        "contentStart": 12,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 126,
+                            "length": 0
+                        },
+                        "contentStart": 125,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ee1746dd-e735-4b2d-c262-7fbe1202a7fb",
+                    "resultId": "075534df-dae6-4c1d-da14-24b8dbaee2d3",
+                    "rows": [
+                        {
+                            "0": "Amit",
+                            "1": "Ravi",
+                            "2": "9000000003",
+                            "3": "Mumbai"
+                        },
+                        {
+                            "0": "Pooja",
+                            "1": "Priya",
+                            "2": "9000000004",
+                            "3": "Delhi"
+                        },
+                        {
+                            "0": "Rohit",
+                            "1": "Arjun",
+                            "2": "9000000005",
+                            "3": "Bangalore"
+                        },
+                        {
+                            "0": "Meera",
+                            "1": "Karan",
+                            "2": "9000000014",
+                            "3": "Mumbai"
+                        },
+                        {
+                            "0": "James",
+                            "1": "David",
+                            "2": "9000000001",
+                            "3": "New York"
+                        },
+                        {
+                            "0": "Sophia",
+                            "1": "Chris",
+                            "2": "9000000002",
+                            "3": "Los Angeles"
+                        },
+                        {
+                            "0": "Daniel",
+                            "1": "Emma",
+                            "2": "9000000012",
+                            "3": "New York"
+                        },
+                        {
+                            "0": "Oliver",
+                            "1": "Harry",
+                            "2": "9000000006",
+                            "3": "London"
+                        },
+                        {
+                            "0": "Harry",
+                            "1": "Olivia",
+                            "2": "9000000007",
+                            "3": "Manchester"
+                        },
+                        {
+                            "0": "Isla",
+                            "1": "George",
+                            "2": "9000000016",
+                            "3": "London"
+                        },
+                        {
+                            "0": "Noah",
+                            "1": "Liam",
+                            "2": "9000000008",
+                            "3": "Toronto"
+                        },
+                        {
+                            "0": "Emma",
+                            "1": "Noah",
+                            "2": "9000000009",
+                            "3": "Vancouver"
+                        },
+                        {
+                            "0": "Lucas",
+                            "1": "Ethan",
+                            "2": "9000000010",
+                            "3": "Sydney"
+                        },
+                        {
+                            "0": "Mia",
+                            "1": "Lucas",
+                            "2": "9000000011",
+                            "3": "Melbourne"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "cust_name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agent_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "phone_no",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "city",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 14 records retrieved in 2.375ms"
+                    },
+                    "totalRowCount": 14,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select c.cust_name,a.agent_name,a.phone_no,c.city from customer c inner join agent a on c.agent_code=a.agent_code",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b6c233fa-9434-4281-cfde-acdd6b92006d"
+                    ]
+                },
+                "currentHeight": 352,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 117
+                        },
+                        "contentStart": 11,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ee1746dd-e735-4b2d-c262-7fbe1202a7fb",
+                    "resultId": "b6c233fa-9434-4281-cfde-acdd6b92006d",
+                    "rows": [
+                        {
+                            "0": "23RF",
+                            "1": "John",
+                            "2": null
+                        },
+                        {
+                            "0": "AU01",
+                            "1": "Ethan",
+                            "2": 18
+                        },
+                        {
+                            "0": "AU02",
+                            "1": "Lucas",
+                            "2": 19
+                        },
+                        {
+                            "0": "AX01",
+                            "1": "Jack",
+                            "2": null
+                        },
+                        {
+                            "0": "AX04",
+                            "1": "Ani",
+                            "2": null
+                        },
+                        {
+                            "0": "CA01",
+                            "1": "Liam",
+                            "2": 16
+                        },
+                        {
+                            "0": "CA02",
+                            "1": "Noah",
+                            "2": 17
+                        },
+                        {
+                            "0": "CD4J",
+                            "1": "Sam",
+                            "2": null
+                        },
+                        {
+                            "0": "IN01",
+                            "1": "Ravi",
+                            "2": 6
+                        },
+                        {
+                            "0": "IN02",
+                            "1": "Priya",
+                            "2": 7
+                        },
+                        {
+                            "0": "IN03",
+                            "1": "Arjun",
+                            "2": 8
+                        },
+                        {
+                            "0": "IN04",
+                            "1": "Karan",
+                            "2": 9
+                        },
+                        {
+                            "0": "IN05",
+                            "1": "Neha",
+                            "2": null
+                        },
+                        {
+                            "0": "UK01",
+                            "1": "Harry",
+                            "2": 13
+                        },
+                        {
+                            "0": "UK02",
+                            "1": "Olivia",
+                            "2": 14
+                        },
+                        {
+                            "0": "UK03",
+                            "1": "George",
+                            "2": 15
+                        },
+                        {
+                            "0": "UK04",
+                            "1": "Amelia",
+                            "2": null
+                        },
+                        {
+                            "0": "US01",
+                            "1": "David",
+                            "2": 10
+                        },
+                        {
+                            "0": "US02",
+                            "1": "Chris",
+                            "2": 11
+                        },
+                        {
+                            "0": "US03",
+                            "1": "Emma",
+                            "2": 12
+                        },
+                        {
+                            "0": "US04",
+                            "1": "Sophia",
+                            "2": null
+                        },
+                        {
+                            "0": "W9IO",
+                            "1": "Mike",
+                            "2": null
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agent_code",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agent_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "cust_id",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 22 records retrieved in 0.9ms"
+                    },
+                    "totalRowCount": 22,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#left join\nselect a.agent_code,a.agent_name,c.cust_id from agent a left join customer c on a.agent_code=c.agent_code",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 35,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
